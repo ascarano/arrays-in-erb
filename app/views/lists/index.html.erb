@@ -14,15 +14,30 @@
   <li><%= city %></li>
   <% end %>
 </ul>
-<h2>Nested Array</h2>
+<h2>Nested Array</h2><h3>
 
-<% states_and_cities =["New York", [ "New York City", "Albany"], "Connecticut", ["Stamford", "Hartford", "Norwalk"], "New Jersey", ["Jersey City", "Trenton"]] %>
+<% states_and_cities=[
+  ["New York",["New York City", "Albany"]],
+  ["Connecticut",["Stamford","Hartford","Norwalk"]],
+  ["New Jersey", ["Jersey City","Trenton"]]
+  ] %>
 
-<h3><%= states_and_cities[0] %></h3>
-<h3><%= states_and_cities[1] %></h3>
 
-<ul>
-   <% states_and_cities.each do |ny| %>
-   <li><%= ny[1] %></li>
-   <% end %>
-</ul>
+    <!--
+
+    my_array[0]  <- what is this?
+    my_array[1]   <- what is this?
+
+    [
+      [state name, []],
+      [state name, []]
+    ]
+    -->
+<% states_and_cities.each do |state,city| %>
+  <h2><%= state %></h2>
+    <% city.each do |eachcity| %>
+      <ul>
+        <li><%= eachcity %></li>
+      </ul>
+    <% end %>
+<% end %>
