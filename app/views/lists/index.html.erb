@@ -1,7 +1,28 @@
 <h2>States</h2>
 
-<p>Put your code here...</p>
-
+<% states=["New York", "Connecticut", "New Jersey"] %>
+<ul>
+<% states.each do |state| %>
+  <li><%= state %></li>
+  <% end %>
+</ul>
 <h2>Cities</h2>
 
-<p>Put your code here...</p>
+<% cities=["New York City", "Stamford", "Jersey City", "Hartford", "Trenton", "Albany" ] %>
+<ul>
+<% cities.each do |city| %>
+  <li><%= city %></li>
+  <% end %>
+</ul>
+<h2>Nested Array</h2>
+
+<% states_and_cities =["New York", [ "New York City", "Albany"], "Connecticut", ["Stamford", "Hartford", "Norwalk"], "New Jersey", ["Jersey City", "Trenton"]] %>
+
+<h3><%= states_and_cities[0] %></h3>
+<h3><%= states_and_cities[1] %></h3>
+
+<ul>
+   <% states_and_cities.each do |ny| %>
+   <li><%= ny[1] %></li>
+   <% end %>
+</ul>
